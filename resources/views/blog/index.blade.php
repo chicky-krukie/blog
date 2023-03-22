@@ -21,6 +21,7 @@
                         <h5>Posted at {{ $post->created_at }}</h5>
                         <p>{!! $post->content !!}</p>
                         <br><br>
+                        <a href="{{ url('/blog/' .$post->id . '/edit') }}" class="btn btn-primary btn-sm">edit</a>
                         @endforeach
                     </div>
 
