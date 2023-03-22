@@ -10,7 +10,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::getPostsByDate();
         return view('blog.index')->with('posts', $posts);
 
     }

@@ -11,4 +11,9 @@ class Post extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['title', 'content'];
     // use HasFactory;
+
+    public static function getPostsByDate()
+    {
+        return self::orderBy('created_at', 'desc')->get();
+    }
 }
