@@ -14,7 +14,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Content</label>
-                <textarea class="form-control" name="content" rows="3"></textarea>
+                <textarea class="ckeditor form-control" name="content" rows="3"></textarea>
             </div>
             <input type="submit" value="Post" class="btn btn-success">
         </form>
@@ -22,3 +22,6 @@
     </div>
 </div>
 @stop
+
+
+@include('blog.scripts')

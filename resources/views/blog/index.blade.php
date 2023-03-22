@@ -19,7 +19,7 @@
                         <hr>
                         <h2>{{ $post->title }}</h2>
                         <h5>Posted at {{ $post->created_at }}</h5>
-                        <p>{{ $post->content }}</p>
+                        <p>{!! $post->content !!}</p>
                         <br><br>
                         @endforeach
                     </div>
