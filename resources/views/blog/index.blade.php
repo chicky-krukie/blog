@@ -6,6 +6,7 @@
           <h2>SpaceWhales Anime Blog</h2>
           <hr class="my-8 border-t-2">
 
+          
 
           <div class="mx-28">
 
@@ -29,8 +30,11 @@
 
       <article class="my-4 grid grid grid-cols-3">
 
+
       <!-- row 1-->
-        <div class="col-span-2">
+        <div class="col-span-2">  
+
+
           <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Jujutsu Kaisen Review</h1>
@@ -143,17 +147,23 @@
           </div>
 
 
-          @foreach($posts as $post)
-            <hr class="my-16">
           
+
+          @foreach($posts as $post)
+            
+          <hr class="my-16">
             <div>
-              <!-- Title -->
+              
               <a href="{{ url('/blog/' .$post->id . '/edit') }}" class="font-semibold my-2" style="font-size: 32px;">{{ $post->title }}</a>
-              <img class="my-4" src="https://spacewhaleshome.files.wordpress.com/2019/12/beladonna.jpg?w=656&h=300&crop=1">
+              <img class="my-4" src="{{ asset($post->image) }}" style="width:656px; height:300px">
               <p style="font-size: 12px; color: #999999 ">POSTED AT {{ $post->created_at }}</p>
               <p class="my-6 text-xl font-light" style="color: #666666">{!! $post->content !!}</p>
             </div>
+
+            
         @endforeach
+
+
 
 
 
@@ -161,20 +171,19 @@
 
         <!-- row 2 -->
 
-        <div class="grid">
+        <div class="grid gap-4">
           <div class="justify-self-end">
-            <hr>
             <div class="my-6">
-            <form action="{{ url('/search')}}" method="get" accept-charset="utf-8">
-                            <div class="form-search" style="float:right">
-                                <div class="form-group" style="display:flex"> 
-                                <input type="search" name="title" class="form-control" placeholder="Search Title">
-                            </div>
-                            <button   button type="submit" class="btn btn-primary">Search</button>
-                            </div>
-                        </form>
-                <!-- <input type="search" placeholder="search here"> -->
+                <form action="{{ url('/search')}}" method="get" accept-charset="utf-8">
+                    <div class="form-search">
+                        <div class="form-group" style="display:flex"> 
+                        <input type="search" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Title">
+                    </div>
+                    <button   button type="submit" class="">Search</button>
+                    </div>
+                </form>
             </div>
+
             <div>
             <a href="{{ url('/blog/create') }}" class="px-6 py-4 rounded-full border-2 border-black text-black" style="float:left; background-color: #e6e6e6;">Create Post</a>
             </div>
