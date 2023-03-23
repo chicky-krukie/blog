@@ -18,7 +18,7 @@
             </div>
 
           </div>
-          
+
           <hr class="my-8 border-t-2">
       </div>
 
@@ -51,7 +51,7 @@
 
 
           <hr class="my-16">
-          
+
           <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Hidashi no Gen Review</h1>
@@ -62,7 +62,7 @@
 
 
           <hr class="my-16">
-          
+
           <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Gegege no Kitarou (2018) Review</h1>
@@ -74,7 +74,7 @@
 
 
           <hr class="my-16">
-          
+
           <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Higurashi no Naku Koro ni (2020) Episode 1 Review</h1>
@@ -86,7 +86,7 @@
 
 
           <hr class="my-16">
-          
+
           <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Jujutsu Kaisen Episode 1 Review</h1>
@@ -98,7 +98,7 @@
 
 
           <hr class="my-16">
-          
+
           <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Blood-C Review</h1>
@@ -109,7 +109,7 @@
 
 
           <hr class="my-16">
-          
+
           <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Magia Record: Mahou Shoujo Madoka Magica Gaiden – Episode 1 Review</h1>
@@ -121,7 +121,7 @@
 
 
           <hr class="my-16">
-          
+
           <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Winter 2020: What I’m Watching</h1>
@@ -133,7 +133,7 @@
 
 
           <hr class="my-16">
-          
+
           <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Belladonna of Sadness Review (NSFW; TW)</h1>
@@ -145,10 +145,10 @@
 
           @foreach($posts as $post)
             <hr class="my-16">
-          
+
             <div>
               <!-- Title -->
-              <a href="{{ url('/blog/' .$post->id . '/edit') }}" class="font-semibold my-2" style="font-size: 32px;">{{ $post->title }}</a>
+              <h1 class="font-semibold my-2" style="font-size: 32px;">{{ $post->title }}</h1>
               <img class="my-4" src="https://spacewhaleshome.files.wordpress.com/2019/12/beladonna.jpg?w=656&h=300&crop=1">
               <p style="font-size: 12px; color: #999999 ">POSTED AT {{ $post->created_at }}</p>
               <p class="my-6 text-xl font-light" style="color: #666666">{!! $post->content !!}</p>
@@ -162,9 +162,6 @@
         <!-- row 2 -->
 
         <div class="grid">
-          <div class="justify-self-end">
-            <hr>
-            <div class="my-6">
             <form action="{{ url('/search')}}" method="get" accept-charset="utf-8">
                             <div class="form-search" style="float:right">
                                 <div class="form-group" style="display:flex"> 
@@ -173,12 +170,8 @@
                             <button   button type="submit" class="btn btn-primary">Search</button>
                             </div>
                         </form>
-                <!-- <input type="search" placeholder="search here"> -->
-            </div>
-            <div>
+          <div class="justify-self-end">
             <a href="{{ url('/blog/create') }}" class="px-6 py-4 rounded-full border-2 border-black text-black" style="float:left; background-color: #e6e6e6;">Create Post</a>
-            </div>
-            
           </div>
         </div>
 
@@ -196,11 +189,9 @@
         <div class="row">
            <div class="col-md-9">
                 <div class="card">
-
                     <div class="card-header text-lg">
                         <h1>Space Whale</h1>
                     </div>
-
                     <div class="card-body">
                        <a href="{{ url('/blog/create') }}" class="btn btn-success btn small" style="float:left">Create Post</a>
                        
@@ -209,7 +200,6 @@
                         </form>
                        <br><br>
                        <h4><small>BLOG POSTS</small></h4>
-
                        @foreach($posts as $post)
                         <hr>
                         <h2>{{ $post->title }}</h2>
@@ -219,7 +209,6 @@
                         <a href="{{ url('/blog/' .$post->id . '/edit') }}" class="btn btn-primary btn-sm">edit</a>
                         @endforeach
                     </div>
-
                 </div>
            </div> 
         </div> -->
