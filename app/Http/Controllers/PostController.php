@@ -62,9 +62,11 @@ class PostController extends Controller
         return redirect('blog')->with('flash_message', 'Post Deleted Successfully');
     }
     
-    public function search(Request $request)
+    public function search()
     {
-        $get_blog = $request->search_name;
-        
+        $search_text = $_GET['title'];
+        $blog = Post::where('title', 'LIKE', '%'.$search_text.'%')->get();
+
+        return view('blog.search', compact('blog'));
     }
 }
