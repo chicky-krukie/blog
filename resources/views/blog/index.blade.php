@@ -30,8 +30,11 @@
       <article class="my-4 grid grid grid-cols-3">
 
       <!-- row 1-->
+      
         <div class="col-span-2">
-          <div>
+        {{-- ANIME LIST (hardcoded) --}}
+        {{-- 
+            <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Jujutsu Kaisen Review</h1>
               <img class="my-4" src="https://spacewhaleshome.files.wordpress.com/2021/04/jujutsu-kaisen-1613518270587.jpeg?w=656&h=300&crop=1">
@@ -141,17 +144,24 @@
               <p style="font-size: 12px; color: #999999 ">DECEMBER 9, 2019 ~ 3 COMMENTS</p>
               <p class="my-6 text-xl font-light" style="color: #666666">"it's something that will never be made again."</p>
           </div>
+        
+        --}}
 
 
           @foreach($posts as $post)
             <hr class="my-16">
           
+            {{-- Anime list (w/ img) --}}
             <div>
-              <!-- Title -->
-              <a href="{{ url('/blog/' .$post->id . '/edit') }}" class="font-semibold my-2" style="font-size: 32px;">{{ $post->title }}</a>
-              <img class="my-4" src="https://spacewhaleshome.files.wordpress.com/2019/12/beladonna.jpg?w=656&h=300&crop=1">
-              <p style="font-size: 12px; color: #999999 ">POSTED AT {{ $post->created_at }}</p>
-              <p class="my-6 text-xl font-light" style="color: #666666">{!! $post->content !!}</p>
+              <div>
+                <!-- Title -->
+                <a href="{{ url('/blog/' .$post->id . '/edit') }}" class="font-semibold my-2" style="font-size: 32px;">{{ $post->title }}</a>
+                <img class="my-4" src="{{ asset($item->image) }}">
+                <p style="font-size: 12px; color: #999999 ">{{$post->created_at}} ~ <a>LEAVE A COMMENT</a></p>
+                <p class="my-6 text-xl font-light" style="color: #666666">{{$post->content}}</p>
+              </div>
+
+            <hr class="my-16">
             </div>
         @endforeach
 

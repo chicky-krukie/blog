@@ -68,4 +68,13 @@ class PostController extends Controller
 
         return view('blog.search', compact('posts'));
     }
+
+    public function store_image(Request $request){
+        $requestData = $request->all();
+        $fileName = time().$request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->storeAs('sample_images', $fileName, 'public');
+        $requestData["image"] = '/storage/'.$path;
+        Post::create($requestData);
+        return redirect('blog')->with('flash_message', 'Blog Added!');
+    }
 }
