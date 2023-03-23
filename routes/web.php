@@ -10,3 +10,4 @@ Route::get('/', function () {
 
 
 Route::resource('blog', PostController::class);
+//Route::get('search', PostController::class);

@@ -43,8 +43,9 @@ class PostController extends Controller
 
     public function edit($id)
     {
+        // print_r('edit');
         $post = Post::find($id);
-        return view('blog.edit')->with('posts', $post);
+        return view('blog.edit')->with('post', $post);
     }
 
     public function update(Request $request, $id)
@@ -59,5 +60,11 @@ class PostController extends Controller
     {
         Post::destroy($id);
         return redirect('blog')->with('flash_message', 'Post Deleted Successfully');
+    }
+    
+    public function search(Request $request)
+    {
+        $get_blog = $request->search_name;
+        
     }
 }
