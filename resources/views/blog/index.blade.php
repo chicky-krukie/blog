@@ -148,7 +148,7 @@
           
             <div>
               <!-- Title -->
-              <h1 class="font-semibold my-2" style="font-size: 32px;">{{ $post->title }}</h1>
+              <a href="{{ url('/blog/' .$post->id . '/edit') }}" class="font-semibold my-2" style="font-size: 32px;">{{ $post->title }}</a>
               <img class="my-4" src="https://spacewhaleshome.files.wordpress.com/2019/12/beladonna.jpg?w=656&h=300&crop=1">
               <p style="font-size: 12px; color: #999999 ">POSTED AT {{ $post->created_at }}</p>
               <p class="my-6 text-xl font-light" style="color: #666666">{!! $post->content !!}</p>
