@@ -61,4 +61,10 @@ class PostController extends Controller
         Post::destroy($id);
         return redirect('blog')->with('flash_message', 'Post Deleted Successfully');
     }
+    
+    public function search(Request $request)
+    {
+        $get_blog = $request->search_name;
+        
+    }
 }
