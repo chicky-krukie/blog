@@ -22,8 +22,6 @@ return new class extends Migration
             $table->string("genre");
             $table->string("release");
             $table->string("summary");
-            $table->string("video");
-            
             $table->timestamps();
         });
     }

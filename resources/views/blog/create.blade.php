@@ -42,14 +42,6 @@
             </div>
 
 
-            {{-- Video --}}
-
-            <div class="mb-3">
-                <label class="block mb-2 font-medium text-gray-500 dark:text-white">Video</label>
-                <input type="file" name="video" id="video">
-            </div>
-
-
             {{-- Content --}}
             <div class="mb-3">
                 <label class="block mb-2 font-medium text-gray-500 dark:text-white">Content</label>

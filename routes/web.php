@@ -12,3 +12,6 @@ Route::resource('blog', PostController::class);
 //Route::get('search', PostController::class);
 Route::get('/search', 'App\Http\Controllers\PostController@search');
 //Route::get('/blog', 'App\Http\Controllers\PostController@store_image');
+
+//Fetch Data
+Route::get('/show/{id}', 'App\Http\Controllers\PostController@showAnime');

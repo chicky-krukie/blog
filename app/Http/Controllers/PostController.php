@@ -12,7 +12,6 @@ class PostController extends Controller
     {
         $posts = Post::getPostsByDate();
         return view('blog.index')->with('posts', $posts);
-
     }
 
     public function create()
@@ -24,9 +23,9 @@ class PostController extends Controller
     {
 
         $requestData = $request->all();
-        $fileName = time().$request->file('image')->getClientOriginalName();
+        $fileName = time() . $request->file('image')->getClientOriginalName();
         $path = $request->file('image')->storeAs('sample_images', $fileName, 'public');
-        $requestData["image"] = '/storage/'.$path;
+        $requestData["image"] = '/storage/' . $path;
         Post::create($requestData);
         return redirect('blog')->with('flash_message', 'Blog Added!');
         //print_r($request->all());
@@ -39,9 +38,9 @@ class PostController extends Controller
         // $post->content = $request->content;
         // $post->save();
         // print_r('test');
-        
 
-        
+
+
     }
 
     // public function store_image(Request $request){
@@ -81,10 +80,11 @@ class PostController extends Controller
         Post::destroy($id);
         return redirect('blog')->with('flash_message', 'Post Deleted Successfully');
     }
-    
+
     public function search()
-    {    $search_text = $_GET['title'];
-        $posts = Post::where('title', 'LIKE', '%'.$search_text.'%')->get();
+    {
+        $search_text = $_GET['title'];
+        $posts = Post::where('title', 'LIKE', '%' . $search_text . '%')->get();
 
         return view('blog.search', compact('posts'));
     }
@@ -99,6 +99,9 @@ class PostController extends Controller
     //     return redirect('blog')->with('flash_message', 'Blog Added!');
     // }
 
-
-    
+    public function showAnime($id)
+    {
+        $posts = Post::find($id);
+        return view('blog.show', compact('posts', 'id'));
+    }
 }
