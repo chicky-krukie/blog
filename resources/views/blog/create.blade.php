@@ -5,7 +5,7 @@
     <hr class="my-2">
     <div class="card-body my-6">
 
-        <form action="{{ url('blog') }}" method="post">
+        <form action="{{ url('blog') }}" method="post" enctype="multipart/form-data">
             {!! csrf_field() !!}
 
             {{-- title input  --}}
@@ -19,7 +19,11 @@
                 <label class="block mb-2 font-medium text-gray-500 dark:text-white">Image</label>
                 <input type="file" name="image" id="image">
             </div>
+<<<<<<< HEAD
             {{-- content input --}}
+=======
+
+>>>>>>> bb17cea995409ca5d2092faf426ef04c30c97c9e
             <div class="mb-3">
                 <label class="block mb-2 font-medium text-gray-500 dark:text-white">Content</label>
                 <textarea class="ckeditor form-control" name="content" rows="3"></textarea>

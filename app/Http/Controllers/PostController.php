@@ -23,17 +23,35 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        $input = $request->all();
-        Post::create($input);
+        $requestData = $request->all();
+        $fileName = time().$request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->storeAs('sample_images', $fileName, 'public');
+        $requestData["image"] = '/storage/'.$path;
+        Post::create($requestData);
+        return redirect('blog')->with('flash_message', 'Blog Added!');
+        //print_r($request->all());
+        // print_r('test');
+        // $input = $request->all();
+        // Post::create($input);
         // return redirect('blog')->with('flash_message', 'Posted Successfully');
         // $post = new POST;
         // $post->title = $request->title;
         // $post->content = $request->content;
         // $post->save();
         // print_r('test');
-        return redirect('blog')->with('success', 'Post created successfully!');
+        
 
+        
     }
+
+    // public function store_image(Request $request){
+    //     $requestData = $request->all();
+    //     $fileName = time().$request->file('image')->getClientOriginalName();
+    //     $path = $request->file('image')->storeAs('sample_images', $fileName, 'public');
+    //     $requestData["image"] = '/storage/'.$path;
+    //     Post::create($requestData);
+    //     return redirect('blog')->with('flash_message', 'Blog Added!');
+    // }
 
 
     public function show($id)
@@ -69,6 +87,7 @@ class PostController extends Controller
         return view('blog.search', compact('posts'));
     }
 
+<<<<<<< HEAD
     public function store_image(Request $request){
         $requestData = $request->all();
         $fileName = time().$request->file('image')->getClientOriginalName();
@@ -78,3 +97,18 @@ class PostController extends Controller
         return redirect('blog')->with('flash_message', 'Blog Added!');
     }
 }
+=======
+    // public function store_image(Request $request)
+    // {
+    //     $requestData = $request->all();
+    //     $fileName = time().$request->file('image')->getClientOriginalName();
+    //     $path = $request->file('image')->storeAs('sample_images', $fileName, 'public');
+    //     $requestData["image"] = '/storage/'.$path;
+    //     Post::create($requestData);
+    //     return redirect('blog')->with('flash_message', 'Blog Added!');
+    // }
+
+
+    
+}
+>>>>>>> bb17cea995409ca5d2092faf426ef04c30c97c9e
