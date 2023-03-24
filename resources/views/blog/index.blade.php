@@ -34,7 +34,7 @@
 
 
             @foreach ($posts as $post)
-                <hr class="my-16">
+                
                 <div>
                     <?php $checker = $post->id?>
                     <a href="show/{{$post->id}}" class="font-semibold my-2" style="font-size: 32px;">{{ $post->title }}</a>
@@ -43,6 +43,8 @@
                     <p style="font-size: 12px; color: #999999 ">POSTED AT {{ $post->created_at }}</p>
                     <p class="my-6 text-xl font-light" style="color: #666666">{!! $post->content !!}</p>
                 </div>
+
+                <hr class="my-16">
             @endforeach
 
 
