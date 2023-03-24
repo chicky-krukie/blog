@@ -9,7 +9,7 @@ class Post extends Model
 {
     protected $table = 'blog';
     protected $primaryKey = 'id';
-    protected $fillable = ['title', 'content'];
+    protected $fillable = ['title', 'content', 'image'];
     // use HasFactory;
 
     public static function getPostsByDate()
