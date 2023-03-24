@@ -3,25 +3,25 @@
 
 
 <div class="text-center font-semibold" style="color: #666666; font-size: 27px">
-          <h2>SpaceWhales Anime Blog</h2>
-          <hr class="my-8 border-t-2">
+    <h2>SpaceWhales Anime Blog</h2>
+    <hr class="my-8 border-t-2">
 
-          
+    
 
-          <div class="mx-28">
+    <div class="mx-28">
 
-            <div class="font-normal text-sm flex justify-between" style="color: #999999">
-              <a class="">HOME</a>
-              <a>REVIEW INDEX</a>
-              <a>SEASONAL ANIME</a>
-              <a>OTHER POSTS</a>
-              <a href="">SUPER CUB REVIEW</a>
-            </div>
+    <div class="font-normal text-sm flex justify-between" style="color: #999999">
+        <a class="">HOME</a>
+        <a>REVIEW INDEX</a>
+        <a>SEASONAL ANIME</a>
+        <a>OTHER POSTS</a>
+        <a href="">SUPER CUB REVIEW</a>
+    </div>
 
-          </div>
-          
-          <hr class="my-8 border-t-2">
-      </div>
+    </div>
+    
+    <hr class="my-8 border-t-2">
+</div>
 
       <div>
           <h1 class="my-4 font-medium text-lg" style="color: #999999">Tag: <span>horror</span></h1>
