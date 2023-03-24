@@ -56,7 +56,9 @@ class PostController extends Controller
 
     public function show($id)
     {
-        
+        // print_r('show');
+        $post = Post::find($id);
+        return view('blog.show')->with('post', $post);
     }
 
     public function edit($id)
