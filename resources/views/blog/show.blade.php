@@ -24,7 +24,7 @@
     </div>
 
     <div class="my-6 font-light text-lg text-ri">
-        <p>{{$posts->summary}}</p>
+        <p>{!! $posts->summary !!}</p>
     </div>
 
     <hr class="my-16">
