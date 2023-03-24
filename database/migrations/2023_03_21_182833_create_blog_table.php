@@ -18,6 +18,12 @@ return new class extends Migration
             $table->string("title");
             $table->string("image", 300);
             $table->string("content");
+            $table->string("length");
+            $table->string("genre");
+            $table->string("release");
+            $table->string("summary");
+            $table->string("video");
+            
             $table->timestamps();
         });
     }
