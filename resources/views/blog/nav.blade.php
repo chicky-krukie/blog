@@ -88,7 +88,7 @@ h3{
 }
 </style>
     <div class="navbar">
-  <a href="blog">HOME</a>
+  <a href="{{ url('/blog')  }}">HOME</a>
   <div class="dropdown">
     <button class="dropbtn">REVIEW INDEX
       <i class="fa fa-caret-down"></i>
