@@ -6,6 +6,7 @@
 
 
 
+
         <div class="mx-28">
 
 
@@ -144,6 +145,47 @@
     </div>
 
     <article class="my-4 grid grid grid-cols-3">
+
+
+
+<div class="text-center font-semibold" style="color: #666666; font-size: 27px">
+    <h2>SpaceWhales Anime Blog</h2>
+    <hr class="my-8 border-t-2">
+
+    @include('blog.nav')
+    
+    <hr class="my-8 border-t-2">
+</div>
+
+      <div>
+          <h1 class="my-4 font-medium text-lg" style="color: #999999">Tag: <span>horror</span></h1>
+          <hr>
+      </div>
+
+      <article class="my-4 grid grid grid-cols-3">
+
+
+      <!-- row 1-->
+        <div class="col-span-2">  
+
+
+          <div>
+              <!-- Title -->
+              <h1 class="font-semibold my-2" style="font-size: 32px;">Jujutsu Kaisen Review</h1>
+              <img class="my-4" src="https://spacewhaleshome.files.wordpress.com/2021/04/jujutsu-kaisen-1613518270587.jpeg?w=656&h=300&crop=1">
+              <p style="font-size: 12px; color: #999999 ">APRIL 12, 2021 ~ LEAVE A COMMENT</p>
+              <p class="my-6 text-xl font-light" style="color: #666666">"I can almost guarantee you'll crack a smile watching it because it just doesn't trip on landmines"</p>
+          </div>
+
+          <hr class="my-16">
+
+          <div>
+              <!-- Title -->
+              <h1 class="font-semibold my-2" style="font-size: 32px;">Urasekai Picnic Review</h1>
+              <img class="my-4" src="https://spacewhaleshome.files.wordpress.com/2021/04/eut4vbcxiaqw-te.jpeg?w=656&h=300&crop=1">
+              <p style="font-size: 12px; color: #999999 ">APRIL 12, 2021 ~ LEAVE A COMMENT</p>
+              <p class="my-6 text-xl font-light" style="color: #666666">"...a great watch of ingenuity-cum-stupidity..."</p>
+          </div>
 
 
         <!-- row 1-->
