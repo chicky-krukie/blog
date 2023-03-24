@@ -84,7 +84,7 @@ class PostController extends Controller
     public function search()
     {
         $search_text = $_GET['title'];
-        $posts = Post::where('title', 'LIKE', '%' . $search_text . '%')->get();
+        $posts = Post::where('title', 'LIKE', '%' . $search_text . '%')->orderBy('created_at', 'desc')->get();
 
         return view('blog.search', compact('posts'));
     }
