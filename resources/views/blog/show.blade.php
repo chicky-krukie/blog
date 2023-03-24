@@ -5,19 +5,8 @@
     <h2>SpaceWhales Anime Blog</h2>
         <hr class="my-8 border-t-2">
 
-        
-
-        <div class="mx-28">
-
-        <div class="font-normal text-sm flex justify-between" style="color: #999999">
-            <a class="">HOME</a>
-            <a>REVIEW INDEX</a>
-            <a>SEASONAL ANIME</a>
-            <a>OTHER POSTS</a>
-            <a href="">SUPER CUB REVIEW</a>
-        </div>
-
-    </div>
+    
+        @include('blog.nav')
     
     <hr class="my-8 border-t-2">
 
