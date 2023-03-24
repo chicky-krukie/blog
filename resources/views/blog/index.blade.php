@@ -6,16 +6,120 @@
           <h2>SpaceWhales Anime Blog</h2>
           <hr class="my-8 border-t-2">
 
+          
 
           <div class="mx-28">
 
-            <div class="font-normal text-sm flex justify-between" style="color: #999999">
-              <a class="">HOME</a>
-              <a>REVIEW INDEX</a>
-              <a>SEASONAL ANIME</a>
-              <a>OTHER POSTS</a>
-              <a href="">SUPER CUB REVIEW</a>
-            </div>
+             <style>
+    .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: right;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #ffffff;
+  width: 600px;
+  margin: auto;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: #808080;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 13px;  
+  border: none;
+  outline: none;
+  color: #808080;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(128, 104, 104, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: #808080;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+form.example input[type=text] {
+  padding: 7px;
+  font-size: 10px;
+  border: 1px solid #808080;
+  float: right;
+  width: 10%;
+  background: #f1f1f1;
+}
+a{
+  font-size: 15px;
+}
+h3{
+    align-self: auto;
+}
+</style>
+    <div class="navbar">
+  <a href="blog">HOME</a>
+  <div class="dropdown">
+    <button class="dropbtn">REVIEW INDEX
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">REVIEWS BY SCORE</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">SEASONAL ANIME
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">FALL 2020</a>
+      <a href="#">SPRING 2020</a>
+      <a href="#">WINTER 2020</a>
+    </div>
+  </div>  
+  <a href="#news">OTHER POSTS</a>
+  <a href="#news">SUPER CUB REVIEW</a>
+</div>
 
           </div>
           
@@ -29,8 +133,11 @@
 
       <article class="my-4 grid grid grid-cols-3">
 
+
       <!-- row 1-->
-        <div class="col-span-2">
+        <div class="col-span-2">  
+
+
           <div>
               <!-- Title -->
               <h1 class="font-semibold my-2" style="font-size: 32px;">Jujutsu Kaisen Review</h1>
@@ -143,17 +250,23 @@
           </div>
 
 
-          @foreach($posts as $post)
-            <hr class="my-16">
           
+
+          @foreach($posts as $post)
+            
+          <hr class="my-16">
             <div>
-              <!-- Title -->
-              <h1 class="font-semibold my-2" style="font-size: 32px;">{{ $post->title }}</h1>
-              <img class="my-4" src="https://spacewhaleshome.files.wordpress.com/2019/12/beladonna.jpg?w=656&h=300&crop=1">
+              
+              <a href="{{ url('/blog/' .$post->id . '/edit') }}" class="font-semibold my-2" style="font-size: 32px;">{{ $post->title }}</a>
+              <img class="my-4" src="{{ asset($post->image) }}" style="width:656px; height:300px">
               <p style="font-size: 12px; color: #999999 ">POSTED AT {{ $post->created_at }}</p>
               <p class="my-6 text-xl font-light" style="color: #666666">{!! $post->content !!}</p>
             </div>
+
+            
         @endforeach
+
+
 
 
 
@@ -161,9 +274,23 @@
 
         <!-- row 2 -->
 
-        <div class="grid">
+        <div class="grid gap-4">
           <div class="justify-self-end">
+            <div class="my-6">
+                <form action="{{ url('/search')}}" method="get" accept-charset="utf-8">
+                    <div class="form-search">
+                        <div class="form-group" style="display:flex"> 
+                        <input type="search" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Title">
+                    </div>
+                    <button   button type="submit" class="">Search</button>
+                    </div>
+                </form>
+            </div>
+
+            <div>
             <a href="{{ url('/blog/create') }}" class="px-6 py-4 rounded-full border-2 border-black text-black" style="float:left; background-color: #e6e6e6;">Create Post</a>
+            </div>
+            
           </div>
         </div>
 
